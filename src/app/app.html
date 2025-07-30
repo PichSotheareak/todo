@@ -31,12 +31,18 @@
             style="width: 250px;">
         </div>
         <button
-          class="btn btn-primary cart-btn"
+          class="btn btn-primary position-relative"
           data-bs-toggle="modal"
           data-bs-target="#cartModal">
-          <i class="bi bi-cart"></i> Cart
-          <span class="cart-count">{{cartCount()}}</span>
+          <i class="bi bi-cart fs-5"></i> Cart
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            *ngIf="cartCount() > 0">
+    {{ cartCount() }}
+            <span class="visually-hidden">items in cart</span>
+  </span>
         </button>
+
       </div>
     </div>
   </div>
